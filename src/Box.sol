@@ -28,8 +28,8 @@ contract Box is Ownable {
      */
     constructor() Ownable(msg.sender) {}
 
-    /*
-        *   Modifiers
+    /**
+     *   Modifiers
      * @dev onlyOwner() inherited from Ownable.sol
      */
 
