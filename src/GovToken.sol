@@ -8,13 +8,13 @@ import {ERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20P
 import {ERC20Votes} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
 contract GovToken is ERC20, ERC20Permit, ERC20Votes, Ownable {
-    constructor() ERC20("BoxGov", "BOXGOV") ERC20Permit("BoxGov") Ownable(msg.sender){}
+    constructor() ERC20("BoxGov", "BOXGOV") ERC20Permit("BoxGov") Ownable(msg.sender) {}
 
-    function mint(address to, uint256 amount) public onlyOwner{
+    function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
-    function burn(address account, uint256 amount) public onlyOwner{
+    function burn(address account, uint256 amount) public onlyOwner {
         _burn(account, amount);
     }
 
@@ -23,8 +23,7 @@ contract GovToken is ERC20, ERC20Permit, ERC20Votes, Ownable {
         super._update(from, to, value);
     }
 
-    function nonces(address owner) public view virtual override(Nonces, ERC20Permit) returns (uint256){
+    function nonces(address owner) public view virtual override(Nonces, ERC20Permit) returns (uint256) {
         return super.nonces(owner);
     }
-
 }
