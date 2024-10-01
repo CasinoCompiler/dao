@@ -36,7 +36,7 @@ contract Box is Ownable {
     /**
      * Functions
      */
-    function setNumber(uint256 number) public onlyOwner {
+    function store(uint256 number) public onlyOwner {
         s_number = number;
         emit NumberChanged(number);
     }
@@ -44,7 +44,7 @@ contract Box is Ownable {
     /**
      * Getter Functions
      */
-    function getNumber() public view returns (uint256) {
+    function retrieve() public view returns (uint256) {
         return s_number;
     }
 }
